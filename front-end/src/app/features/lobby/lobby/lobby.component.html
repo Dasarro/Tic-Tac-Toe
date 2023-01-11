@@ -1,0 +1,6 @@
+<main>
+    <button *ngIf="!inQueue" mat-raised-button color="primary" (click)="onJoinQueue()">Join queue</button>
+    <button *ngIf="inQueue" mat-raised-button color="primary" (click)="onLeaveQueue()">Leave queue</button>
+    <button mat-raised-button color="primary" routerLink="/leaderboard">Leaderboard</button>
+    <a mat-raised-button color="primary" href="/login">Change name</a>
+</main>

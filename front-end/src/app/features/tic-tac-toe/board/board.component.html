@@ -1,0 +1,20 @@
+<main>
+    <h2 *ngIf="winner && winner !== 'Tie'">
+        Player {{ winner }} won the game!
+    </h2>
+    <h2 *ngIf="winner && winner === 'Tie'">
+        Game ended in a tie.
+    </h2>
+
+    <h1>You play as {{ player }}</h1>
+
+    <div>
+        <app-square
+            *ngFor="let square of board; let i = index"
+            [value]="square"
+            (click)="makeMove(i)">
+        </app-square>
+    </div>
+
+    <button mat-raised-button color="primary" routerLink="/lobby">Back to lobby</button>
+</main>

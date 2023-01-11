@@ -1,0 +1,21 @@
+<main>
+    <h1>Leaderboard</h1>
+
+    <div class="table" *ngIf="users$ | async as users; else loading">
+        <div class="tableCol">
+            <div *ngFor="let user of users">
+                {{ user.username }}
+            </div>
+        </div>
+        <div class="tableCol">
+            <div *ngFor="let user of users">
+                {{ user.wins - user.loses }}
+            </div>
+        </div>
+    </div>
+    <ng-template #loading>
+        Loading...
+    </ng-template>
+
+    <button mat-raised-button color="primary" routerLink="/lobby">Back to lobby</button>
+</main>

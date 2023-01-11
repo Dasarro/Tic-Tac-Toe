@@ -1,0 +1,15 @@
+<main>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <h1>Login</h1>
+
+        <mat-form-field appearance="fill">
+            <mat-label for="username">Username</mat-label>
+            <input id="username" type="text" formControlName="username" matInput>
+            <mat-error *ngIf="username?.hasError('required')">
+                Username is required!
+            </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Play</button>
+    </form>
+</main>
